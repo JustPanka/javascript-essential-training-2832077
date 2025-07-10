@@ -23,4 +23,31 @@ const backpack = {
     this.strapLength.left = lengthLeft;
     this.strapLength.right = lengthRight;
   },
+  setName(newName) {
+    this.name = newName;
+  },
+  setVolume(newVolume) {
+    this.volume = newVolume;
+  },
+  setColor(newColor) {
+    this.color = newColor;
+  },
+  setPocketNum(newPocketNum) {
+    this.pocketNum = newPocketNum;
+  },
+  setStrapLength(newLeft, newRight) {
+    this.left = newLeft;
+    this.right = newRight;
+  },
+  setToggleLid(newToggleLid) {
+    this.toggleLid = newToggleLid;
+  },
+  setNewStrapLength(newLeft, newRight) {
+    this.setStrapLength.left = newLeft;
+    this.setStrapLength.right = newRight;
+  },
 };
+
+backpack.setToggleLid(() => {
+  console.log("new togglelid function");
+});
