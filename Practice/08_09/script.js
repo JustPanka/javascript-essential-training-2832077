@@ -67,9 +67,15 @@ function helper() {
   image.setAttribute("alt", "");
   let figcaption = document.createElement("figcaption");
   figcaption.innerText = frogpack.description;
+  figure.append(image, figcaption);
+  return figure;
 }
 
 function createArticle() {
   let article = document.createElement("article");
   article.innerHTML = content;
+  article.prepend(helper(frogpack));
+  return article;
 }
+
+document.querySelector("main").append(createArticle(frogpack));
