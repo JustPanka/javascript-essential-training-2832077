@@ -8,6 +8,38 @@
 
 const entireGrid = document.querySelector(".grid");
 
-entireGrid.addEventListener("mouseover", (event) => {
-    entireGrid.
+entireGrid.addEventListener("mouseenter", () => {
+  entireGrid.style.outline = "6px groove blue";
+});
+
+entireGrid.addEventListener("mouseleave", () => {
+  entireGrid.style.outline = "";
+});
+
+const everyCell = document.querySelectorAll(".cell");
+
+everyCell.forEach((cell) => {
+  cell.addEventListener("mouseenter", () => {
+    cell.style.outline = "6px ridge purple";
+  });
+  cell.addEventListener("mouseleave", () => {
+    cell.style.outline = "";
+  });
+  cell.addEventListener("click", () => {
+    if (cell.style.backgroundColor) {
+      cell.style.backgroundColor = "";
+    } else {
+      cell.style.backgroundColor = "green";
+    }
+  });
+});
+
+const wholePage = document.body;
+
+wholePage.addEventListener("keydown", (event) => {
+  if (event.key === "d" && wholePage.style.backgroundColor == "") {
+    wholePage.style.backgroundColor = "black";
+  } else if (event.key === "d" && wholePage.style.backgroundColor == "black") {
+    wholePage.style.backgroundColor = "";
+  }
 });
